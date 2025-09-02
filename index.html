@@ -2,10 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My First Site</title>
+  <title>NCAA D1 Track & Field Coaches Directory</title>
+  <meta name="description" content="Find NCAA Division I track & field coaches with emails and staff page links.">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    #search { margin-bottom: 1rem; padding: 8px; width: 300px; }
+  </style>
 </head>
 <body>
-  <h1>Hello, Track World!</h1>
-  <p>This is my first GitHub Pages site.</p>
+
+  <h1>NCAA Division I Track & Field Coaches Directory</h1>
+  <p>Search and browse official coaching contacts across NCAA schools.</p>
+
+  <input type="text" id="search" placeholder="Search by school, coach, or email...">
+
+  <table id="directory">
+    <thead>
+      <tr>
+        <th>School</th>
+        <th>Coach</th>
+        <th>Title</th>
+        <th>Email</th>
+        <th>Staff Page</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function loadCoaches() {
+      const response = await fetch('coaches.json');
+      const data = await response.json();
+      const tbody = document.querySelector('#directory tbody');
+
+      data.forEach(entry => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${entry.school}</td>
+          <td>${entry.coach}</td>
+          <td>${entry.title}</td>
+          <td><a href="mailto:${entry.email}">${entry.email}</a></td>
+          <td><a href="${entry.staffPage}" target="_blank">Link</a></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Search filter
+    document.getElementById('search').addEventListener('keyup', function() {
+      const value = this.value.toLowerCase();
+      document.querySelectorAll('#directory tbody tr').forEach(row => {
+        row.style.display = row.innerText.toLowerCase().includes(value) ? '' : 'none';
+      });
+    });
+
+    loadCoaches();
+  </script>
+
 </body>
 </html>
