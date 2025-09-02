@@ -1,0 +1,16 @@
+[
+  {
+    "school": "University of Oregon",
+    "coach": "Robert Johnson",
+    "title": "Head Coach",
+    "email": "coach@uoregon.edu",
+    "staffPage": "https://goducks.com/sports/track-and-field/coaches"
+  },
+  {
+    "school": "Florida State University",
+    "coach": "Bob Braman",
+    "title": "Head Coach",
+    "email": "coach@fsu.edu",
+    "staffPage": "https://seminoles.com/sports/track-and-field/coaches/"
+  }
+]
