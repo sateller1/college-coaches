@@ -11,6 +11,14 @@
   <script src="scripts/displayCSV.js" defer></script>
 </head>
 <body>
+  <div class="search-container">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Search coaches, schools, or emails..." 
+    onkeyup="filterTable()" 
+  />
+</div>
   <header>
     <h1>Women's Basketball Coaches</h1>
     <nav>
