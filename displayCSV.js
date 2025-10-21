@@ -27,7 +27,7 @@ function loadCSV(filePath, button = null) {
 function filterTable() {
   const input = document.getElementById("searchInput");
   const filter = input.value.toLowerCase();
-  const table = document.getElementById("data-table");
+  const table = document.getElementById("csv-table");
   const rows = table.getElementsByTagName("tr");
 
   for (let i = 1; i < rows.length; i++) {
