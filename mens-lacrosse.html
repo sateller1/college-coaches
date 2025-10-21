@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>College Coach Directory</title>
+  <title>Men's Lacrosse Coaches</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script src="scripts/displayCSV.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>College Coach Directory</h1>
+    <h1>Men's Lacrosse Coaches</h1>
     <nav>
+      <a href="index.html">Home</a>
       <a href="mens-soccer.html">Men's Soccer</a>
       <a href="womens-soccer.html">Women's Soccer</a>
       <a href="mens-lacrosse.html">Men's Lacrosse</a>
@@ -19,8 +22,12 @@
   </header>
   <main>
     <section class="content">
-      <h2>Welcome</h2>
-      <p>This site lists sample college coach data for demonstration purposes. Replace the CSVs in the <code>data/</code> folder with your own files to customize the information.</p>
+      <div class="tabs">
+        <button onclick="loadCSV('data/mens-lacrosse-div1.csv', this)">Division I</button>
+        <button onclick="loadCSV('data/mens-lacrosse-div2.csv', this)">Division II</button>
+        <button onclick="loadCSV('data/mens-lacrosse-div3.csv', this)">Division III</button>
+      </div>
+      <div id="csv-table"></div>
     </section>
     <aside class="sidebar">
       <p><strong>Ad Space</strong></p>
@@ -30,5 +37,8 @@
   <footer>
     <p>© 2025 College Coach Directory</p>
   </footer>
+  <script>
+    loadCSV('data/mens-lacrosse-div1.csv');
+  </script>
 </body>
 </html>
