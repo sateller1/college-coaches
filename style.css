@@ -68,6 +68,19 @@ th, td {
   text-align: left;
 }
 
+.search-container {
+  margin: 1rem 0;
+  text-align: right;
+}
+
+#searchInput {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 250px;
+}
+
 th {
   background-color: #f2f2f2;
 }
