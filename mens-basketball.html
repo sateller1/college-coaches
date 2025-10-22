@@ -22,15 +22,6 @@
       <a href="womens-basketball.html">Women's Basketball</a>
     </nav>
   </header>
-
-  <!-- Move search bar below header -->
-  <div class="search-container">
-    <input 
-      type="text" 
-      id="searchInput" 
-      placeholder="Search coaches, schools, or emails..." 
-      onkeyup="filterTable()" 
-    />
   </div>
 
   <main>
@@ -40,7 +31,14 @@
         <button onclick="loadCSV('data/mens-basketball-div2.csv', this)">Division II</button>
         <button onclick="loadCSV('data/mens-basketball-div3.csv', this)">Division III</button>
       </div>
-
+      
+ <div class="search-container">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search coaches, schools, or emails..." 
+      onkeyup="filterTable()" 
+    />
       <div id="csv-table"></div>
     </section>
   </main>
