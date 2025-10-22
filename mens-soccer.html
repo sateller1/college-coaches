@@ -11,13 +11,7 @@
   <script src="displayCSV.js" defer></script>
 </head>
 <body>
-  <div class="search-container">
-  <input 
-    type="text" 
-    id="searchInput" 
-    placeholder="Search coaches, schools, or emails..." 
-    onkeyup="filterTable()" 
-  />
+
 </div>
   <header>
     <h1>Men's Soccer Coaches</h1>
@@ -37,6 +31,16 @@
         <button onclick="loadCSV('data/mens-soccer-div2.csv', this)">Division II</button>
         <button onclick="loadCSV('data/mens-soccer-div3.csv', this)">Division III</button>
       </div>
+      
+       <div class="search-container">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search coaches, schools, or emails..." 
+      onkeyup="filterTable()" 
+    />
+ </div>
+      
       <div id="csv-table"></div>
     </section>
   </main>
