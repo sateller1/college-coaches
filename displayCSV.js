@@ -44,11 +44,3 @@ function filterTable() {
     rows[i].style.display = match ? "" : "none";
   }
 }
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("button[data-csv]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const csvPath = btn.getAttribute("data-csv");
-      loadCSV(csvPath);
-    });
-  });
-});
