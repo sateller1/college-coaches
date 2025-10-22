@@ -84,10 +84,12 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
-.search-container,
-.tabs {
+.search-container {
+  display: flex;
+  justify-content: flex-start; /* push to left */
+  align-items: center;
   text-align: left;
-  display: block;
+  width: 100%;
   margin: 1em 0;
 }
 .tabs button {
