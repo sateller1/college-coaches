@@ -97,3 +97,22 @@ th {
   padding: 8px 16px;
   cursor: pointer;
 }
+<style>
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #003366;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
