@@ -115,17 +115,14 @@ th {
   footer a:hover {
     text-decoration: underline;
   }
-</style>
 .text-page main {
-  max-width: none;     /* allow full width */
-  margin: 1rem auto;
+  display: block;       /* override flex */
+  max-width: 900px;     /* readable width */
+  margin: 2rem auto;
   padding: 2rem;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+</style>
 
-.text-page h1 {
-  text-align: center;
-  color: #003366;
-}
