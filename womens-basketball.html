@@ -26,8 +26,16 @@
   </header>
   <main>
     <section class="content">
+
+       <p> The Women's Basketball Coaches Directory offers easy access to college coaching contacts across all NCAA divisions. 
+    Use this page to research programs, introduce yourself to coaching staffs, and understand the recruiting process from Division I to III. 
+    Browse the divisions below to get started. You can also search by name, school, or email.
+    I work to keep this as up to date as possible! 
+        </p> 
+        <p><em>The last update on this list was: April 2025</em></p>
+      
       <div class="tabs">
-        <button onclick="loadCSV('data/womens-basketball-div1.csv', this)">Division I</button>
+        <button id="div1-btn" onclick="loadCSV('data/womens-basketball-div1.csv', this)">Division I</button>
         <button onclick="loadCSV('data/womens-basketball-div2.csv', this)">Division II</button>
         <button onclick="loadCSV('data/womens-basketball-div3.csv', this)">Division III</button>
       </div>
@@ -42,12 +50,7 @@
  </div>
       
       <div id="csv-table">
-      <p> The Women's Basketball Coaches Directory offers easy access to college coaching contacts across all NCAA divisions. 
-    Use this page to research programs, introduce yourself to coaching staffs, and understand the recruiting process from Division I to III. 
-    Browse the divisions below to get started. You can also search by name, school, or email.
-    I work to keep this as up to date as possible! 
-        </p> 
-        <p>The last update on this list was: April 2025</p>
+     
       </div>
     </section>
   </main>
@@ -59,8 +62,13 @@
     <a href="/contact.html">Contact</a>
   </p>
 </footer>
-  <script>
-    loadCSV('data/womens-basketball-div1.csv');
+<script>
+    // Wait for the DOM to finish loading before running loadCSV
+    document.addEventListener("DOMContentLoaded", function() {
+      const div1Button = document.getElementById("div1-btn");
+      loadCSV('data/womens-basketball-div1.csv', div1Button);
+      div1Button.classList.add('active');
+    });
   </script>
 </body>
 </html>
