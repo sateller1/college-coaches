@@ -27,6 +27,15 @@
   </header>
   <main>
     <section class="content">
+
+      <p>
+    The Men's Soccer Coaches Directory provides direct contact information for NCAA programs across Divisions I, II, and III. 
+    Athletes, parents, and club coaches can use this resource to reach college soccer programs, learn more about recruiting timelines, 
+    and explore opportunities at schools of every size. Use the division buttons above to browse rosters and staff details. You can also search by name, school, or email.
+    I work to keep this as up to date as possible! 
+  </p>
+        <p> The last update on this list was made: March 2025.</p>
+      
       <div class="tabs">
         <button onclick="loadCSV('data/mens-soccer-div1.csv', this)">Division I</button>
         <button onclick="loadCSV('data/mens-soccer-div2.csv', this)">Division II</button>
@@ -42,13 +51,7 @@
  </div>
       
       <div id="csv-table">
-        <p>
-    The Men's Soccer Coaches Directory provides direct contact information for NCAA programs across Divisions I, II, and III. 
-    Athletes, parents, and club coaches can use this resource to reach college soccer programs, learn more about recruiting timelines, 
-    and explore opportunities at schools of every size. Use the division buttons above to browse rosters and staff details. You can also search by name, school, or email.
-    I work to keep this as up to date as possible! 
-  </p>
-        <p> The last update on this list was made: March 2025.</p>
+        
       </div>
     </section>
   </main>
@@ -61,7 +64,12 @@
   </p>
 </footer>
   <script>
-    loadCSV('data/mens-soccer-div1.csv');
+    // Wait for the DOM to finish loading before running loadCSV
+    document.addEventListener("DOMContentLoaded", function() {
+      const div1Button = document.getElementById("div1-btn");
+      loadCSV('data/mens-soccer-div1.csv', div1Button);
+      div1Button.classList.add('active');
+    });
   </script>
 </body>
 </html>
