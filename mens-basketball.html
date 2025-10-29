@@ -23,46 +23,47 @@
       <a href="womens-basketball.html">Women's Basketball</a>
     </nav>
   </header>
-  </div>
 
   <main>
     <section class="content">
+
+      <p>
+        Explore the Men’s Basketball Coaches Directory to find contact information for NCAA coaches at every level. 
+        This tool helps student-athletes and families communicate directly with college basketball programs to learn more about roster needs, 
+        scholarships, and recruiting timelines. Choose a division below to view updated staff listings and emails. 
+        You can also search by name, school, or email.
+        I work to keep this as up to date as possible!  
+      </p>
+      <p><em>The last update on this list was made: March 2025.</em></p>
+
       <div class="tabs">
-        <button onclick="loadCSV('data/mens-basketball-div1.csv', this)">Division I</button>
+        <button id="div1-btn" onclick="loadCSV('data/mens-basketball-div1.csv', this)">Division I</button>
         <button onclick="loadCSV('data/mens-basketball-div2.csv', this)">Division II</button>
         <button onclick="loadCSV('data/mens-basketball-div3.csv', this)">Division III</button>
       </div>
-      
- <div class="search-container">
-    <input 
-      type="text" 
-      id="searchInput" 
-      placeholder="Search coaches, schools, or emails..." 
-      onkeyup="filterTable()" 
-    />
- </div>
 
-      <div id="csv-table">
-        <p>
-    Explore the Men’s Basketball Coaches Directory to find contact information for NCAA coaches at every level. 
-    This tool helps student-athletes and families communicate directly with college basketball programs to learn more about roster needs, 
-    scholarships, and recruiting timelines. Choose a division above to view updated staff listings and emails. You can also search by name, school, or email.
-    I work to keep this as up to date as possible!  
-  </p>
-        <p>The last update on this list was made: March 2025.</p>
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search coaches, schools, or emails..." 
+          onkeyup="filterTable()" 
+        />
       </div>
+
+      <div id="csv-table"></div>
+
     </section>
   </main>
 
   <footer>
-  <p>
-    &copy; 2025 CollegeCoaches.us | 
-    <a href="/privacypolicy.html">Privacy Policy</a> | 
-    <a href="/faq.html">FAQ</a> | 
-    <a href="/contact.html">Contact</a>
-  </p>
-</footer>
-
+    <p>
+      &copy; 2025 CollegeCoaches.us | 
+      <a href="/privacypolicy.html">Privacy Policy</a> | 
+      <a href="/faq.html">FAQ</a> | 
+      <a href="/contact.html">Contact</a>
+    </p>
+  </footer>
 
   <script>
     // Wait for the DOM to finish loading before running loadCSV
