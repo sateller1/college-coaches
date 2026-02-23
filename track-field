@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9692280538697828" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-adsense-account" content="ca-pub-9692280538697828">
+  <title>Men's Basketball Coaches</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script src="displayCSV.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Men's Basketball Coaches</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="mens-soccer.html">Men's Soccer</a>
+      <a href="womens-soccer.html">Women's Soccer</a>
+      <a href="mens-lacrosse.html">Men's Lacrosse</a>
+      <a href="mens-basketball.html">Men's Basketball</a>
+      <a href="womens-basketball.html">Women's Basketball</a>
+      <a href=“track-field.html">Track and Field</a>
+
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+
+      <p>
+        Explore the Men’s Basketball Coaches Directory to find contact information for NCAA coaches at every level. 
+        This tool helps student-athletes and families communicate directly with college basketball programs to learn more about roster needs, 
+        scholarships, and recruiting timelines. Choose a division below to view updated staff listings and emails. 
+        You can also search by name, school, or email.
+        I work to keep this as up to date as possible!  
+      </p>
+      <p><em>The last update on this list was made: March 2025.</em></p>
+
+      <div class="tabs">
+        <button id="div1-btn" onclick="loadCSV('data/track-div1.csv', this)">Division I</button>
+        <button onclick="loadCSV('data/track-div2.csv', this)">Division II</button>
+        <button onclick="loadCSV('data/track-div3.csv', this)">Division III</button>
+      </div>
+
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search coaches, schools, or emails..." 
+          onkeyup="filterTable()" 
+        />
+      </div>
+
+      <div id="csv-table"></div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2025 CollegeCoaches.us | 
+      <a href="/privacypolicy.html">Privacy Policy</a> | 
+      <a href="/faq.html">FAQ</a> | 
+      <a href="/contact.html">Contact</a>
+    </p>
+  </footer>
+
+  <script>
+    // Wait for the DOM to finish loading before running loadCSV
+    document.addEventListener("DOMContentLoaded", function() {
+      const div1Button = document.getElementById("div1-btn");
+      loadCSV('data/mens-basketball-div1.csv', div1Button);
+      div1Button.classList.add('active');
+    });
+  </script>
+</body>
+</html>
