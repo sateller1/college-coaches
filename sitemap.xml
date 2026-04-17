@@ -31,6 +31,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.collegecoaches.us/football.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.collegecoaches.us/mens-basketball.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
