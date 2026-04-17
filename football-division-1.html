@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NCAA Division I football coaches contact directory for recruiting. Search coach emails, schools, and staff details.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.collegecoaches.us/football-division-1.html">
+  <title>Division I Football Coaches Contact Directory</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script src="displayCSV.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Division I Football Coaches</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="football.html">Football</a>
+      <a href="football-division-1.html">D1 Football</a>
+      <a href="football-division-2.html">D2 Football</a>
+      <a href="football-division-3.html">D3 Football</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+  </header>
+  <main>
+    <section class="content">
+      <p>Use this page to search NCAA Division I football coach contact information for recruiting outreach.</p>
+      <div class="tabs">
+        <button id="div1-btn" onclick="loadCSV('data/football-div1.csv', this)">Division I</button>
+      </div>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search coaches, schools, or emails..." onkeyup="filterTable()">
+      </div>
+      <div id="csv-table"></div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 CollegeCoaches.us | <a href="/privacypolicy.html">Privacy Policy</a> | <a href="/faq.html">FAQ</a> | <a href="/contact.html">Contact</a></p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const div1Button = document.getElementById("div1-btn");
+      loadCSV("data/football-div1.csv", div1Button);
+      div1Button.classList.add("active");
+    });
+  </script>
+</body>
+</html>
